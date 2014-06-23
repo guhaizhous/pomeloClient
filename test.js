@@ -1,12 +1,12 @@
 var pomeloClient = require('./lib/clientforserver');
-//ÏÔÊ¾¶ÔÏó·½·¨
+//æ˜¾ç¤ºå¯¹è±¡æ–¹æ³•
 console.log(pomeloClient);
 /*pomeloClient
-init: [Function], ³õÊ¼»¯Áª½Ó
-initWebSocket: [Function],³õÊ¼»¯Áª½Ó
-disconnect: [Function],¹Ø±ÕÁª½Ó
-request: [Function],ÇëÇó·şÎñ ÓĞ»Ø¸´
-notify: [Function] }Í¨Öª·şÎñ ÎŞ»Ø¸´
+init: [Function], åˆå§‹åŒ–è”æ¥
+initWebSocket: [Function],åˆå§‹åŒ–è”æ¥
+disconnect: [Function],å…³é—­è”æ¥
+request: [Function],è¯·æ±‚æœåŠ¡ æœ‰å›å¤
+notify: [Function] }é€šçŸ¥æœåŠ¡ æ— å›å¤
 */
 
 
@@ -16,17 +16,17 @@ var params ={
 	log: true
 	};
 
-//³õÊ¼»¯¶ÔÏñ
+//åˆå§‹åŒ–å¯¹åƒ
 pomeloClient.init(params,function(err){
 	console.log(err._events.open);
-	//·¢ËÍÊı¾İ
-	pomeloClient.request('chat.entryHandler.entry', "Çë°ïÎÒ°Ñ±­×Óµİ¸øÎÒ", function(data) {
+	//å‘é€æ•°æ®
+	pomeloClient.request('chat.entryHandler.entry', "è¯·å¸®æˆ‘æŠŠæ¯å­é€’ç»™æˆ‘", function(data) {
 		console.log("111111:"+data);
-		//Í¨Öª
-		pomeloClient.notify('chat.entryHandler.entry', "ÎÒÒª¸É»îÁË", function(data) {
+		//é€šçŸ¥
+		pomeloClient.notify('chat.entryHandler.entry', "æˆ‘è¦å¹²æ´»äº†", function(data) {
 			console.log("===="+data);
 		});
-		//¹Ø±ÕÁª½Ó
+		//å…³é—­è”æ¥
 		//pomeloClient.disconnect();
 	});
 });

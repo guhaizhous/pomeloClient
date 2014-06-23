@@ -1,5 +1,5 @@
 var pomeloClient = require('./lib/clientforserver');
-//ÏÔÊ¾¶ÔÏó·½·¨
+//æ˜¾ç¤ºå¯¹è±¡æ–¹æ³•
 console.log(pomeloClient);
 /*pomeloClient
 init: [Function],
@@ -16,17 +16,17 @@ var params ={
 	log: true
 	};
 
-//³õÊ¼»¯¶ÔÏñ
+//åˆå§‹åŒ–å¯¹åƒ
 pomeloClient.init(params,function(err){
 	console.log(err._events.open);
-	//·¢ËÍÊı¾İ
+	//å‘é€æ•°æ®
 	pomeloClient.request('chat.entryHandler.entry', "dddddddddd", function(data) {
 		console.log("111111:"+data);
-		//Í¨Öª
+		//é€šçŸ¥
 		pomeloClient.notify('chat.entryHandler.entry', "dddddddddd", function(data) {
 			console.log("===="+data);
 		});
-		//¹Ø±ÕÁª½Ó
+		//å…³é—­è”æ¥
 		//pomeloClient.disconnect();
 	});
 });
